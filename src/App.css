@@ -1,0 +1,81 @@
+:root {
+  --primary-color: #000;
+  --secondary-color: #333;
+  --accent-color: #e60000;
+  --text-color: #333;
+  --light-gray: #f5f5f5;
+  --border-color: #ddd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  /* padding: 2rem; */
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Cart Overlay Styles */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+.cart-sidebar {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 2rem;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-cart {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .cart-sidebar {
+    width: 100%;
+    max-width: none;
+  }
+}
